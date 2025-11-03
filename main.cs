@@ -1,6 +1,6 @@
 class main
 {
-    public void Main(string args[])
+    public void Main(string[] args)
     {
 
     }
