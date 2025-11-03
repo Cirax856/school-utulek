@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace utulek
 {
@@ -10,7 +7,36 @@ namespace utulek
     {
         static void Main(string[] args)
         {
+            private List<Animal> animalList = new List<Animal>();
+            
+            while (true)
+            {
+                Console.Write("What do you want to do (add): ");
+                string input = Console.ReadLine();
 
+                switch (input)
+                {
+                    case "add":
+                        string name = AskInput("Name: ");
+                        string type = AskInput("Type: ");
+                        string age = AskInput("Age: ");
+                        string gender = AskInput("Gender: ");
+                        string date = AskInput("Date: ");
+                        string status = AskInput("Health status: ");
+                        string note = AskInput("Note: ");
+
+                        animalList.Add(new Animal(animalList.Count() + 1, name, type, int.Parse(age), gender, date, status, note));
+                        break;
+                }
+
+                Console.WriteLine(animalList[0].animalCard())
+            }
+        }
+
+        private string AskInput(string input)
+        {
+            Console.Write(input);
+            return Console.ReadLine();
         }
     }
 }
