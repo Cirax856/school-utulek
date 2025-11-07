@@ -20,4 +20,6 @@ public class Animal
         this.state = state;
         this.note = note;
     }
+
+
 }

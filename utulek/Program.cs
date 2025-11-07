@@ -5,9 +5,9 @@ namespace utulek
 {
     internal class Program
     {
+        static List<Animal> animalList = new List<Animal>();
         static void Main(string[] args)
         {
-            private List<Animal> animalList = new List<Animal>();
             
             while (true)
             {
@@ -29,14 +29,14 @@ namespace utulek
                         break;
                 }
 
-                Console.WriteLine(animalList[0].animalCard())
+                Console.WriteLine(animalList[0].animalCard());
             }
         }
-
-        private string AskInput(string input)
+        static string AskInput(string input)
         {
             Console.Write(input);
             return Console.ReadLine();
         }
     }
 }
+
