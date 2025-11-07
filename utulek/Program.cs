@@ -25,7 +25,7 @@ namespace utulek
                         string status = AskInput("Health status: ");
                         string note = AskInput("Note: ");
 
-                        animalList.Add(new Animal(animalList.Count() + 1, name, type, int.Parse(age), gender, date, status, note));
+                        animalList.Add(new Animal(animalList.Count + 1, name, type, int.Parse(age), gender, date, status, note));
                         break;
                 }
 
