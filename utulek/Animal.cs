@@ -30,9 +30,9 @@ public class Animal
         string card = string.Format("{0} named {1} age {2} with gender {3} was admitted {4} with health status of {5}, extra note: {6}. adoption: {7}, adoption date: {8}, id: {9}", type, name, age, gender, date, status, note, adoption, adoptionDate, id);
         return card;
     }
-    public void adopt(int id)
+    public void Adopt(int id)
     {
-        Console.WriteLine("zadej datum adopce");
+        Console.WriteLine("Enter adoption date:");
         adoptionDate = Console.ReadLine();
         adoption = true;
     }
