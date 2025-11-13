@@ -30,7 +30,7 @@ public class Animal
         string card = string.Format("{0} jménem {1} ve vìku {2} s pohlavím {3} bylo pøijato {4} ve stavu {5} s poznámkou: {6}. Adopce: {7} s datem: {8}. id: {9}", type, name, age, gender, date, status, note, adoption, adoptionDate, id);
         return card;
     }
-    public void adopt()
+    public void adopt(int id)
     {
         Console.WriteLine("zadej datum adopce");
         adoptionDate = Console.ReadLine();
