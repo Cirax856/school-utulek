@@ -29,7 +29,7 @@ namespace utulek
                         break;
                 }
 
-                Console.WriteLine(animalList[0].animalCard());
+                Console.WriteLine(animalList[0].AnimalCard());
             }
         }
         static string AskInput(string input)
