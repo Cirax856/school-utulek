@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace utulek
@@ -11,7 +12,7 @@ namespace utulek
             
             while (true)
             {
-                Console.Write("What do you want to do (add): ");
+                Console.Write("What do you want to do (add/adopt): ");
                 string input = Console.ReadLine();
 
                 switch (input)
@@ -25,10 +26,30 @@ namespace utulek
                         string status = AskInput("Health status: ");
                         string note = AskInput("Note: ");
 
-                        animalList.Add(new Animal(animalList.Count + 1, name, type, int.Parse(age), gender, date, status, note));
+                        try
+                        {
+                            animalList.Add(new Animal(animalList.Count + 1, name, type, int.Parse(age), gender, date, status, note));
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Invalid age");
+                        }
+                        break;
+                    case "adopt":
+                        try
+                        {
+                            int id = int.Parse(AskInput("Id: "));
+                            
+                            animalList.First(animal => animal.id == id).Adopt();
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Invalid id");
+                        }
                         break;
                 }
 
+                Console.WriteLine("");
                 Console.WriteLine(animalList[0].AnimalCard());
             }
         }

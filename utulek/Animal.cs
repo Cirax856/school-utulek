@@ -26,13 +26,11 @@ public class Animal
     }
 
     public string AnimalCard()
+        => $"{type}, id {id}, named {name}, a {age} year old {gender}\nadmitted on {date} with a health status of {status}\nextra note: {note}\n{(adoption ? $"adopted on {adoptionDate}" : "")}";
+
+    public void Adopt()
     {
-        string card = string.Format("{0} named {1} age {2} with gender {3} was admitted {4} with health status of {5}, extra note: {6}. adoption: {7}, adoption date: {8}, id: {9}", type, name, age, gender, date, status, note, adoption, adoptionDate, id);
-        return card;
-    }
-    public void Adopt(int id)
-    {
-        Console.WriteLine("Enter adoption date:");
+        Console.Write("Enter adoption date: ");
         adoptionDate = Console.ReadLine();
         adoption = true;
     }
