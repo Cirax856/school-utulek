@@ -12,10 +12,6 @@ namespace utulek
             
             while (true)
             {
-<<<<<<< HEAD
-                Console.Write("What do you want to do (add/adopt): ");
-                string input = Console.ReadLine();
-=======
                 Console.WriteLine("===== ANIMAL SHELTER =====");
                 Console.WriteLine("1) Add animal");
                 Console.WriteLine("2) List all animals");
@@ -25,41 +21,12 @@ namespace utulek
                 Console.WriteLine("0) Exit");
                 Console.Write("Choice: ");
                 string choice = Console.ReadLine();
->>>>>>> 5edb011 (fixed a lot of stuff)
 
-                switch (input)
+                switch (choice)
                 {
-                    case "add":
-                        string name = AskInput("Name: ");
-                        string type = AskInput("Type: ");
-                        string age = AskInput("Age: ");
-                        string gender = AskInput("Gender: ");
-                        string date = AskInput("Date: ");
-                        string status = AskInput("Health status: ");
-                        string note = AskInput("Note: ");
-
-                        try
-                        {
-                            animalList.Add(new Animal(animalList.Count + 1, name, type, int.Parse(age), gender, date, status, note));
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Invalid age");
-                        }
+                    case "1":
+                        AddAnimal();
                         break;
-<<<<<<< HEAD
-                    case "adopt":
-                        try
-                        {
-                            int id = int.Parse(AskInput("Id: "));
-                            
-                            animalList.First(animal => animal.id == id).Adopt();
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Invalid id");
-                        }
-=======
                     case "2":
                         ListAnimals(animalList);
                         break;
@@ -76,22 +43,16 @@ namespace utulek
                         return;
                     default:
                         Console.WriteLine("Invalid choice.");
->>>>>>> 5edb011 (fixed a lot of stuff)
                         break;
                 }
 
                 Console.WriteLine("");
-<<<<<<< HEAD
                 Console.WriteLine(animalList[0].AnimalCard());
-=======
->>>>>>> 5edb011 (fixed a lot of stuff)
             }
         }
-        static string AskInput(string input)
+
+        static void AddAnimal()
         {
-<<<<<<< HEAD
-            Console.Write(input);
-=======
             string name = AskInput("Name: ");
             string type = AskInput("Type: ");
             string ageInput = AskInput("Age: ");
@@ -186,7 +147,6 @@ namespace utulek
         static string AskInput(string prompt)
         {
             Console.Write(prompt);
->>>>>>> 5edb011 (fixed a lot of stuff)
             return Console.ReadLine();
         }
     }
